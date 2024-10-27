@@ -14,5 +14,9 @@ n=n/10;  i++; }
 while(num>=1)
 { sum+=num%10; num=num/10; } 
   printf("Reverse: %d\nSum of digits: %d", t,sum);
+
+ //input : 345
+ //output :Reverse: 543
+ //Sum of digits:12
  return 0;   
 }
