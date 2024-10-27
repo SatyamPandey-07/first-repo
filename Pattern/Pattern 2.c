@@ -8,7 +8,7 @@ int main() {
 
     for(i = 1; i <= n; i++) {
         // Print leading spaces
-        for(j = 1; j <(n-i); j++) {
+        for(j = 1; j < n; j++) {
             printf(" ");
         }
         
