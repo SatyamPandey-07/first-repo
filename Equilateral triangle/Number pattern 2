@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void printNumberTriangle(int n) {
+    int spaceBefore = n;
+    int num = 1;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < spaceBefore; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k <= i; k++) {
+            printf("%d ", num++);
+        }
+        spaceBefore--;
+        printf("\n");
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    printNumberTriangle(n);
+    return 0;
+}
