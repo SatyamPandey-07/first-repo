@@ -1,0 +1,23 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int is_perfect_square(int n) {
+    int root = sqrt(n);
+    return root * root == n;
+}
+
+int main() {
+    for (int num = 1000; num < 10000; num++) {
+        if (is_perfect_square(num)) {
+            int first_half = num / 100;
+            int last_half = num % 100;
+            if (is_perfect_square(first_half) && is_perfect_square(last_half)) {
+                printf("%d: %d² = %d, %d² = %d\n", 
+                       num, first_half, (int)sqrt(first_half), 
+                       last_half, (int)sqrt(last_half));
+            }
+        }
+    }
+    return 0;
+}
