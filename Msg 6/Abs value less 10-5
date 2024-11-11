@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double X, term, sum = 0.0;
+    int exponent = 1, sign = 1;  // Start with X^1 and positive sign
+
+    // Input the value of X
+    printf("Enter the value of X: ");
+    scanf("%lf", &X);
+
+    // Start with the first term, which is just X
+    do {
+        // Calculate the current term (sign * X^exponent) / exponent!
+        term = sign * pow(X, exponent);
+
+        // Calculate factorial in the loop itself
+        double fact = 1;
+        for (int i = 1; i <= exponent; i++) {
+            fact *= i;
+        }
+        term /= fact;
+
+        // Add the term to the sum
+        sum += term;
+
+        // Update values for the next term
+        exponent += 2;  // Increase exponent by 2 for the next odd power
+        sign = -sign;   // Alternate the sign
+
+    } while (fabs(term) > 1e-5);  // Continue until term is small enough
+
+    // Display the result
+    printf("The sum of the series is: %.5f\n", sum);
+
+    return 0;
+}
