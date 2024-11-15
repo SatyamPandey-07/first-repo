@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, sum = 0.0, term;
+    int n = 0;
+
+    // Input value in radians
+    printf("Enter the value of x (in radians): ");
+    scanf("%lf", &x);
+
+    do {
+        // Calculate the current term of the Taylor series
+        term = pow(-1, n) * pow(x, 2 * n + 1) / tgamma(2 * n + 2); // tgamma computes factorial (n! = (n+1)!)
+        sum += term; // Add the term to the sum
+        n++;
+    } while (fabs(term) > 0.00001); // Precision threshold
+
+    // Output the result
+    printf("sin(%lf) = %lf\n", x, sum);
+
+    return 0;
+}
