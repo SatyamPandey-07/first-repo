@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    printf("Pythagorean triplets between 1 and 100:\n");
+
+    // Loop through possible values of a, b, and c
+    for (a = 1; a <= 100; a++) {
+        for (b = a; b <= 100; b++) { // Start b from a to avoid duplicate pairs
+            for (c = b; c <= 100; c++) { // Start c from b
+                if (a * a + b * b == c * c) {
+                    printf("(%d, %d, %d)\n", a, b, c);
+                }
+            }
+        }
+    }
+
+    return 0;
+}
