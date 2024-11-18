@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int a, b, c, count = 0;
+    int limit = 100;
+
+    printf("First 10 Pythagorean triplets between 1 and 100:\n");
+
+    // Iterate over all possible values of a and b
+    for (a = 1; a <= limit; a++) {
+        for (b = a; b <= limit; b++) { // Start b from a to avoid duplicates
+            c = sqrt(a * a + b * b);   // Calculate c
+
+            // Check if c is an integer and within the range
+            if (c * c == a * a + b * b && c <= limit) {
+                printf("%d: (%d, %d, %d)\n", ++count, a, b, c);
+                if (count == 10) { // Stop after 10 triplets
+                    return 0;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
