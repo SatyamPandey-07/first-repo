@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int is_armstrong(int num) {
+    int original_num = num, sum = 0, digits = 0;
+
+    // Count the number of digits
+    while (original_num != 0) {
+        original_num /= 10;
+        digits++;
+    }
+
+    original_num = num;
+
+    // Calculate the sum of the digits raised to the power of their count
+    while (original_num != 0) {
+        int digit = original_num % 10;
+        sum += pow(digit, digits);
+        original_num /= 10;
+    }
+
+    // Check if the number is an Armstrong number
+    return sum == num;
+}
+
+int main() {
+    printf("Three-digit Armstrong numbers:\n");
+    for (int i = 100; i < 1000; i++) {
+        if (is_armstrong(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n\nFour-digit Armstrong numbers:\n");
+    for (int i = 1000; i < 10000; i++) {
+        if (is_armstrong(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
