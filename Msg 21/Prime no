@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int is_prime(int n) {
+    if (n <= 1) return 0;           // Numbers less than 2 are not prime
+    for (int i = 2; i * i <= n; i++) { // Check divisors up to √n
+        if (n % i == 0) return 0;   // If divisible, not prime
+    }
+    return 1;                       // Otherwise, prime
+}
+
+int main() {
+    printf("Prime numbers between 1 and 100:\n");
+
+    for (int i = 1; i <= 100; i++) {
+        if (is_prime(i)) {
+            printf("%d ", i);       // Print prime numbers
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
