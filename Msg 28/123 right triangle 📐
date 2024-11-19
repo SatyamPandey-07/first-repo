@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void number_triangle(int n) {
+    for (int i = 1; i <= n; i++) {  // Loop through rows
+        int num = i;               // Start number for each row
+        for (int j = 1; j <= i; j++) {  // Loop through columns
+            printf("%d ", num % 10);    // Print number (mod 10 for wrapping)
+            num++;                     // Increment number
+        }
+        printf("\n");                  // Move to the next row
+    }
+}
+
+int main() {
+    int terms;
+    printf("Enter the number of terms (N): ");
+    scanf("%d", &terms);
+
+    number_triangle(terms);
+    return 0;
+}
