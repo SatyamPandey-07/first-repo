@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// Function to check if a number is prime
+bool is_prime(int num) {
+    if (num < 2) {
+        return false;
+    }
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int count = 0; // Counter to track numbers per line
+
+    printf("Prime numbers between 300 and 500:\n");
+
+    for (int i = 300; i <= 500; i++) {
+        if (is_prime(i)) {
+            printf("%d\t", i);
+            count++;
+            if (count % 5 == 0) { // Print a new line after 5 numbers
+                printf("\n");
+            }
+        }
+    }
+    return 0;
+}
