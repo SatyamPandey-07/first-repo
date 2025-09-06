@@ -12,7 +12,7 @@ int main() {
     scanf("%d", &y);
     
     for (int i = 1; i <= y; i++) {
-        sum += pow(x, i) / tgamma(i + 1); // tgamma(i + 1) = factorial(i)
+        sum += pow(x, i) / tgamma(i + 1); 
     }
 
     printf("Sum = %.2f\n", sum);
