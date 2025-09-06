@@ -10,8 +10,7 @@ int main() {
 
     printf("Enter number of terms: ");
     scanf("%d", &y);
-
-    // Calculate the sum of series
+    
     for (int i = 1; i <= y; i++) {
         sum += pow(x, i) / tgamma(i + 1); // tgamma(i + 1) = factorial(i)
     }
